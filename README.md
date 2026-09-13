@@ -3,15 +3,13 @@
 Solvay Middle School Technology — Chromebook coding arena.
 NYS MST Standard 5. Aliases only. No phones.
 
-## Your web stack (use this)
+## Classroom link (your stack)
 
-Same pipeline as TechWorks / `kulibert-desk`:
+**https://tw.kulibert.net/coderized/**
 
-1. Cloudflare Pages → Create project → connect **trebiluk/coderized**
-2. Build: none. Output directory: `/`
-3. Classroom link becomes `https://<your-pages-subdomain>/`
-4. Kids open Chrome on the cart. Class code `QUEST4`.
+Same Cloudflare Pages project as TechWorks (`trebiluk/techworks-desk` → `public/coderized/`). Kids already open that host on the cart.
 
-Optional: attach this same repo as a **Custom domain** you already use for TechWorks (`/coderized` path on `kulibert-desk` if you copy `public/coderized` into TechWorks).
+This repo is the standalone copy. Attach it in Cloudflare Pages if you want a short host such as `coderized.kulibert.net`.
 
-GitHub Pages works too: Settings → Pages → Deploy from GitHub Actions.
+Class code: `QUEST4`.
+Teacher: Chrome → Create shortcut → Open as window.
