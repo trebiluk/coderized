@@ -1,0 +1,5 @@
+# Optional standalone Pages project.
+# Preferred: add coderized.kulibert.net as a custom domain on kulibert-desk.
+name = "coderized"
+compatibility_date = "2026-09-13"
+pages_build_output_dir = "."

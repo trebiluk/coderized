@@ -1,7 +1,8 @@
 {
   "name": "Coderized",
   "short_name": "Coderized",
-  "description": "Solvay MS Technology — coding arena on Chromebooks. Hosted with TechWorks.",
+  "id": "https://coderized.kulibert.net/",
+  "description": "Solvay MS Technology — Chromebook coding arena. User origin coderized.kulibert.net.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
