@@ -1,25 +1,14 @@
-# Coderized
+# Coderized CZ 1.4.0
 
-Solvay Middle School Technology — Chromebook coding arena.
-NYS MST Standard 5. Aliases only. No phones.
+Chromebook coding arena for middle school CTE / STEM (NYS MST Standard 5).
+Alias + class code only. Freeze / Spotlight / Restore.
 
-## User origin (cart)
+## Classroom URL
 
-**https://coderized.kulibert.net/**
+**https://coderized.vercel.app/**
 
-Chrome → Create shortcut → Open as window. Phones stay in lockers.
+Deep links:
+- Student: `https://coderized.vercel.app/?role=student&code=QUEST4&alias=Jordan`
+- Teacher: `https://coderized.vercel.app/?role=teacher&code=QUEST4`
 
-## Alias on the desk
-
-**https://tw.kulibert.net/coderized/**
-
-Same Cloudflare Pages project (`kulibert-desk`). Soft-pins to the user origin when that host answers.
-
-## Light the origin
-
-DNS for `coderized.kulibert.net` already exists.
-
-1. Cloudflare (preferred): Pages → `kulibert-desk` → Custom domains → add `coderized.kulibert.net`. Point DNS at this Pages project the same way as `tw.kulibert.net`. Desk middleware serves the PWA at `/` on that host.
-2. Vercel fallback: import `trebiluk/coderized`, framework Other, output `.`. Domain already CNAMEs to `cname.vercel-dns.com`.
-
-Class code: `QUEST4`.
+Do not deploy this package to TechWorks or `tw.kulibert.net`.

@@ -1,12 +1,12 @@
 {
   "name": "Coderized",
   "short_name": "Coderized",
-  "id": "https://coderized.kulibert.net/",
-  "description": "Solvay MS Technology — Chromebook coding arena. User origin coderized.kulibert.net.",
+  "id": "https://coderized.vercel.app/",
+  "description": "Chromebook coding arena for middle school CTE/STEM. Stop the robot. Version CZ 1.4.0.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "orientation": "landscape",
+  "orientation": "any",
   "background_color": "#1b365d",
   "theme_color": "#1b365d",
   "icons": [
