@@ -13,7 +13,7 @@
 </head>
 <body>
   <header class="top">
-    <div class="brand">KODER<em>IZED</em> <span class="pill" id="version-chip">KZ 1.17.0</span></div>
+    <div class="brand">KODER<em>IZED</em> <span class="pill" id="version-chip">KZ 1.18.0</span></div>
     <div class="meta" id="top-meta">Solvay MS · Technology · Chromebook</div>
     <div class="row top-tools">
       <button class="btn ghost" id="btn-lang-en" type="button" aria-pressed="true">EN</button>
@@ -101,18 +101,16 @@
       <span class="chip" id="ph-modify" data-i18n="fix" role="tab">Fix</span>
       <span class="chip" id="ph-make" data-i18n="done" role="tab">Done</span>
     </div>
-    <div class="play">
-      <div class="card stage">
-        <div class="stage-frame">
-          <canvas id="world" width="640" height="320" aria-label="Robot world"></canvas>
-          <div id="callout" class="callout hidden"></div>
-        </div>
-        <div id="tests" class="clue-chips"></div>
-      </div>
-      <div class="card prove" id="prove-card">
-        <h3 id="ask">The list is empty. What does the bot do?</h3>
+    <div class="play zones">
+      <section class="card zone zone-code" id="zone-code" aria-labelledby="label-code">
+        <h3 class="zone-label" id="label-code" data-i18n="zoneCode">Current code</h3>
+        <div class="blocks" id="block-list"></div>
+      </section>
+      <section class="card zone zone-options" id="zone-options" aria-labelledby="label-options">
+        <h3 class="zone-label" id="label-options" data-i18n="zoneOptions">Options</h3>
+        <h3 id="ask" class="zone-ask hidden"></h3>
         <div id="choices" class="choices"></div>
-        <div class="row">
+        <div class="row" id="prove-card">
           <button class="btn" id="btn-predict" type="button"><span data-i18n="lock">Lock it</span> <span class="k">Enter</span></button>
           <button class="btn gold" id="btn-run-example" type="button"><svg class="picto-svg"><use href="pics.svg#p-watch"/></svg> <span data-i18n="watch">Watch</span> <span class="k">Space</span></button>
         </div>
@@ -129,7 +127,6 @@
             <button class="btn warn" id="pal-stop" type="button"><svg class="picto-svg"><use href="pics.svg#p-stop"/></svg> <span data-i18n="stop">stop</span></button>
             <button class="btn gold" id="pal-score" type="button"><svg class="picto-svg"><use href="pics.svg#p-score"/></svg> <span data-i18n="score">score</span></button>
           </div>
-          <div class="blocks" id="block-list"></div>
           <div class="row" style="margin-top:8px;">
             <button class="btn go" id="btn-run-mine" type="button"><svg class="picto-svg"><use href="pics.svg#p-go"/></svg> <span data-i18n="go">GO</span> <span class="k">Space</span></button>
             <button class="btn gold" id="btn-restore" type="button" data-i18n="undo">Undo</button>
@@ -143,7 +140,15 @@
             <button class="btn go" id="btn-next-door" type="button" style="margin-top:8px;" data-i18n="nextDoor">Next door</button>
           </div>
         </div>
-      </div>
+      </section>
+      <section class="card zone zone-output stage" id="zone-output" aria-labelledby="label-output">
+        <h3 class="zone-label" id="label-output" data-i18n="zoneOutput">Output</h3>
+        <div class="stage-frame">
+          <canvas id="world" width="640" height="320" aria-label="Robot world"></canvas>
+          <div id="callout" class="callout hidden"></div>
+        </div>
+        <div id="tests" class="clue-chips"></div>
+      </section>
     </div>
   </section>
   <section id="screen-teacher" class="wrap hidden">
@@ -182,7 +187,7 @@
       </div>
     </div>
   </section>
-  <p class="footer-note" data-i18n="footer">Koderized KZ 1.17.0 · alias only</p>
+  <p class="footer-note" data-i18n="footer">Koderized KZ 1.18.0 · alias only</p>
   <script src="speak.js"></script>
   <script src="origin.js"></script>
   <script src="i18n.js"></script>

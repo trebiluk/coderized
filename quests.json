@@ -6,7 +6,7 @@
       "n": 1,
       "title": "Door 1 \u00b7 One command",
       "idea": "A command is one thing the bot does.",
-      "ask": "List is empty. What does the bot do?",
+      "ask": "",
       "choices": [
         {
           "p": "sit",
