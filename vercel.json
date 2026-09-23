@@ -8,7 +8,7 @@
         { "key": "Cache-Control", "value": "no-cache" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "X-Koderized-Version", "value": "KZ 1.12.0" }
+        { "key": "X-Koderized-Version", "value": "KZ 1.17.0" }
       ]
     }
   ]

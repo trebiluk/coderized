@@ -1,4 +1,21 @@
-/* Koderized KZ 1.12.0 — Speak beside the line. Not red until GO. One board. No IEP stored. */
+/* Koderized KZ 1.17.0 — Speak beside the line. Not red until GO. One board. No IEP stored. */
+
+function preferTouchUi() {
+  const coarse = window.matchMedia("(pointer: coarse)").matches
+    || window.matchMedia("(any-pointer: coarse)").matches
+    || window.matchMedia("(hover: none)").matches;
+  const touch = (navigator.maxTouchPoints || 0) > 0;
+  const phone = window.matchMedia("(max-width: 640px)").matches;
+  document.body.classList.toggle("touch-ui", !!(coarse || touch || phone));
+}
+preferTouchUi();
+try {
+  window.matchMedia("(pointer: coarse)").addEventListener("change", preferTouchUi);
+  window.matchMedia("(any-pointer: coarse)").addEventListener("change", preferTouchUi);
+  window.matchMedia("(hover: none)").addEventListener("change", preferTouchUi);
+  window.matchMedia("(max-width: 640px)").addEventListener("change", preferTouchUi);
+} catch (_) {}
+
 const DOORS = [
   {
     id: "zero",
@@ -149,6 +166,52 @@ const DOORS = [
     }
   }
 ];
+
+/* CUT D — quest packs */
+async function loadQuestPacks() {
+  try {
+    const res = await fetch("quests.json?v=1.17.0", { cache: "no-store" });
+    if (!res.ok) return;
+    const data = await res.json();
+    const packs = (data && data.quests) || [];
+    const byId = Object.fromEntries(DOORS.map(d => [d.id, d]));
+    packs.forEach(q => {
+      if (byId[q.id]) {
+        const d = byId[q.id];
+        ["title","idea","ask","choices","probeAsk","probes","example","starter","palette","world"].forEach(k => {
+          if (q[k] != null) d[k] = q[k];
+        });
+      } else {
+        // remix door — light generic tests
+        DOORS.push({
+          id: q.id,
+          n: q.n,
+          title: q.title,
+          idea: q.idea,
+          ask: q.ask,
+          choices: q.choices,
+          probeAsk: q.probeAsk,
+          probes: q.probes,
+          example: q.example || [],
+          starter: q.starter || [],
+          palette: q.palette || ["move"],
+          world: q.world,
+          tests: function (r, program) {
+            const hints = q.testHints || ["Moved", "Toward the crate", "Short clear program"];
+            return [
+              { ok: (r.path || []).length >= 2, label: hints[0] },
+              { ok: q.world && r.x >= Math.min(q.world.goalX, q.world.wallX - 1), label: hints[1] },
+              { ok: (program || []).length > 0 && (program || []).length < 20, label: hints[2] }
+            ];
+          }
+        });
+      }
+    });
+    DOORS.sort((a, b) => a.n - b.n);
+    if (DOORS[0] && DOORS[0].example) { try { EXAMPLE = DOORS[0].example.slice(); } catch (e) {} }
+  } catch (e) { /* offline: baked DOORS stay */ }
+}
+
 
 let QUEST_TITLE = DOORS[0].title;
 let EXAMPLE = DOORS[1].example.slice();
@@ -938,4 +1001,4 @@ if ($("btn-walk")) $("btn-walk").onclick = () => {
   save(st); renderStudent();
 };
 applyChrome();
-goLanding();
+loadQuestPacks().then(function () { goLanding(); }).catch(function () { goLanding(); });

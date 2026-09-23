@@ -1,4 +1,4 @@
-/* KZ 1.12.0 — short lines, 1:1 EN/ES. Pictograms carry the rest. */
+/* KZ 1.17.0 — short lines, 1:1 EN/ES. Pictograms carry the rest. */
 window.I18N = {
   en: {
     lang: "en",
@@ -8,7 +8,7 @@ window.I18N = {
     classCode: "Class code",
     alias: "Alias (not a legal name)",
     aliasPh: "Scout",
-    ferpaJoin: "Alias only. No IEP, 504, or legal name.",
+    ferpaJoin: "Alias only. Not a real name.",
     roll: "Start",
     teacher: "Teacher",
     aide: "Aide",
@@ -38,7 +38,7 @@ window.I18N = {
     aideTitle: "Aide card",
     say: "Say",
     tap: "Tap",
-    ferpaAide: "Alias only. No IEP, 504, or legal name.",
+    ferpaAide: "Alias only. Not a real name.",
     winPeriod: "Door 1 is a win today.",
     emptyList: "Empty. Add one.",
     move: "move",
@@ -51,8 +51,11 @@ window.I18N = {
     speak: "Speak",
     stopSpeak: "Stop",
     example: "Example",
-    footer: "Koderized KZ 1.12.0 · alias only · not a SIS · no IEP/504",
+    footer: "Koderized KZ 1.17.0 · alias only",
+    ferpaTeacher: "Teachers only. Alias only. Do not store an IEP, a 504, or a legal name.",
     sit: "SIT", crate: "CRATE", rollShout: "ROLL", safe: "SAFE", bonk: "BONK",
+    clear: "CLEAR",
+    tryAgain: "TRY AGAIN",
     doors: {
       zero: {
         title: "Door 1 · One move",
@@ -177,7 +180,7 @@ window.I18N = {
     classCode: "Código de clase",
     alias: "Apodo (no un nombre legal)",
     aliasPh: "Scout",
-    ferpaJoin: "Solo apodo. No IEP, 504, ni nombre legal.",
+    ferpaJoin: "Solo apodo. No es un nombre real.",
     roll: "Empezar",
     teacher: "Maestro",
     aide: "Asistente",
@@ -207,7 +210,7 @@ window.I18N = {
     aideTitle: "Tarjeta",
     say: "Di",
     tap: "Toca",
-    ferpaAide: "Solo apodo. No IEP, 504, ni nombre legal.",
+    ferpaAide: "Solo apodo. No es un nombre real.",
     winPeriod: "La Puerta 1 ya es un logro hoy.",
     emptyList: "Vacío. Agrega uno.",
     move: "mover",
@@ -220,7 +223,8 @@ window.I18N = {
     speak: "Leer",
     stopSpeak: "Parar",
     example: "Ejemplo",
-    footer: "Koderized KZ 1.12.0 · solo apodo · no es SIS · sin IEP/504",
+    footer: "Koderized KZ 1.17.0 · solo apodo",
+    ferpaTeacher: "Solo maestros. Solo apodo. No guardes un IEP, un 504, ni un nombre legal.",
     sit: "SIT", crate: "CAJA", rollShout: "ROLL", safe: "SAFE", bonk: "BONK",
     doors: {
       zero: {
